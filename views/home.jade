@@ -1,7 +1,9 @@
 doctype html
 html
 	head
-		title Chat
+		title Go Chat
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap.css')
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap-theme.css')
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
 		script(src="/socket.io/socket.io.js")
 		script(type='text/javascript').
@@ -14,24 +16,32 @@ html
 							'Altitude: ' + position.coords.altitude + '<br/>' + 
 							'Accuracy: ' + position.coords.accuracy + '<br/>' + 
 							'Timestamp: ' + new Date(position.timestamp) + '<br/>';
-						element.innerHTML = string;
+						element.innerHTML = "Your location is " + position.coords.latitude + ", " +
+							position.coords.longitude + ". You will able to chat to people in 0.5 miles.";
 				});
 			}
-		script(src="script.js")
+		script(src='script.js')
+		script(src='bootstrap/js/bootstrap.js')
 	body
 		div.container
-			header
-				h1 A Chat application with Node.js and Socket.io
-			input(type='text')#pseudoInput
-			button#pseudoSet Enter your nickname
-			div#chatEntries
-			div#chatControls
-				input(type='text')#messageInput
-				button#submit Send
+			div.content
+				div.page-header
+					h1 Welcome! 
+						br
+						small Introduce yourself and start talking.
+			div.row-fluid
+				div.log-lg-6
+					div.input-group
+						input(type='text')#pseudoInput
+						span.input-group-btn
+							button#pseudoSet Enter your nickname
+					
+			div.span9
+				div#chatEntries
+				div#chatControls
+					input(type='text')#messageInput
+					button#submit Send
 		
-		div.geolocation
-			header
-				h1 Geolocation discovery
-	p
-		#geolocation Finding geolocation...........
+			div#footer
+				#geolocation 
 			
