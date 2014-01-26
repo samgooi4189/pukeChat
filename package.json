@@ -1,0 +1,34 @@
+{
+  "name": "pukeChat",
+  "version": "0.0.0",
+  "description": "Chat app to meet new people around user",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~3.4.8",
+    "jade": "~1.1.5",
+    "socket.io": "~0.9.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samgooi4189/pukeChat.git"
+  },
+  "keywords": [
+    "chat"
+  ],
+  "author": "samgooi4189",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/samgooi4189/pukeChat/issues"
+  }
+
+}
+{
+	"engines":{
+		"node": "0.10.21"
+	}
+}
