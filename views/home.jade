@@ -17,12 +17,14 @@ html
 							'Accuracy: ' + position.coords.accuracy + '<br/>' + 
 							'Timestamp: ' + new Date(position.timestamp) + '<br/>';
 						element.innerHTML = "Your location is " + position.coords.latitude + ", " +
-							position.coords.longitude + ". You will able to chat to people in 0.5 miles.";
+							position.coords.longitude + ". You will able to chat to people within 0.5 miles.";
 				});
 			}
 		script(src='script.js')
 		script(src='bootstrap/js/bootstrap.js')
 	body
+		a(href='http://github.com/samgooi4189/pukechat')
+			img(alt='Fork me on GitHub', src='http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png', style='position: absolute; top: 0; right: 0; border: 0; z-index: 50;')
 		div.container
 			div.content
 				div.page-header
