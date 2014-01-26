@@ -4,6 +4,19 @@ html
 		title Chat
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
 		script(src="/socket.io/socket.io.js")
+		script(type='text/javascript').
+			if(navigator.geolocation){
+				navigator.geolocation.getCurrentPosition(
+					function (position){
+						var element = document.getElementById('geolocation')
+						string = 'Latitude: ' + position.coords.latitude + '<br/>' + 
+							'Longitude: ' + position.coords.longitude + '<br/>' +
+							'Altitude: ' + position.coords.altitude + '<br/>' + 
+							'Accuracy: ' + position.coords.accuracy + '<br/>' + 
+							'Timestamp: ' + new Date(position.timestamp) + '<br/>';
+						element.innerHTML = string;
+				});
+			}
 		script(src="script.js")
 	body
 		div.container
@@ -15,3 +28,10 @@ html
 			div#chatControls
 				input(type='text')#messageInput
 				button#submit Send
+		
+		div.geolocation
+			header
+				h1 Geolocation discovery
+	p
+		#geolocation Finding geolocation...........
+			
