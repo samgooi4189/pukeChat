@@ -1,4 +1,4 @@
-var express = require('express'), app = express(), server = require('http').createServer(app).listen(3000);
+var express = require('express'), app = express(), server = require('http').createServer(app).listen(process.env.PORT || 3000);
 var jade = require('jade');
 var io = require('socket.io').listen(server);
 app.set('views', __dirname + '/views');
