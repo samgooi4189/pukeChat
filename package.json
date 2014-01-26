@@ -24,11 +24,9 @@
   "license": "Apache 2.0",
   "bugs": {
     "url": "https://github.com/samgooi4189/pukeChat/issues"
-  }
-
-}
-{
+  },
 	"engines":{
-		"node": "0.10.21"
+		"node": "0.10.x"
 	}
 }
+
